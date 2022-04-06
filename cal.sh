@@ -7,6 +7,7 @@ while read num2; do
     continue
 done < num2.txt
 
+declare -a arr=("$num1" "$num2")
 
 if [ $# -le 0 ]; then
     echo "....none operator parameter...."
@@ -18,16 +19,16 @@ if [ $# -le 0 ]; then
 
     if [ "$temp" -eq 1 ]; then
         parameter=add
-        anwser=$(("$num1" + "$num2"))
+        anwser=$(("${arr[0]}" + "${arr[1]}"))
     elif [ "$temp" -eq 2 ]; then
         parameter=sub
-        anwser=$(("$num1" - "$num2"))
+        anwser=$(("${arr[0]}" - "${arr[1]}"))
     elif [ "$temp" -eq 3 ]; then
         parameter=div
-        anwser=$(("$num1" / "$num2"))
+        anwser=$(("${arr[0]}" / "${arr[1]}"))
     elif [ "$temp" -eq 4 ]; then
-        parameter=mod
-        anwser=$(("$num1" % "$num2"))
+        parameter=mul
+        anwser=$(("${arr[0]}" * "${arr[1]}"))
     fi
     echo "num1 : $num1"
     echo "num2 : $num2"
@@ -36,16 +37,16 @@ if [ $# -le 0 ]; then
 else
     if [ "$1" -eq 1 ]; then
         parameter=add
-        anwser=$(("$num1" + "$num2"))
+        anwser=$(("${arr[0]}" + "${arr[1]}"))
 elif [ "$1" -eq 2 ]; then
         parameter=sub
-        anwser=$(("$num1" - "$num2"))
+        anwser=$(("${arr[0]}" - "${arr[1]}"))
 elif [ "$1" -eq 3 ]; then
         parameter=div
-        anwser=$(("$num1" / "$num2"))
+        anwser=$(("${arr[0]}" / "${arr[1]}"))
 elif [ "$1" -eq 4 ]; then
-        parameter=mod
-        anwser=$(("$num1" % "$num2"))
+        parameter=mul
+        anwser=$(("${arr[0]}" * "${arr[1]}"))
 fi
     echo "num1 : $num1"
     echo "num2 : $num2"
