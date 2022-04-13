@@ -23,7 +23,7 @@ count_sorted = OrderedDict(sorted(word_count.items(), key = lambda t : t[1], rev
  #   print(a, b)
 
 ct = 0
-
+print(sys.argv[0],sys.argv[1],sys.argv[2])
 for k, v in count_sorted.items():
     if(ct != param_num):
         print(k.ljust(10), str(v).rjust(10))
