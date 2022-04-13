@@ -23,7 +23,7 @@ for a, b in count_sorted.items():
     print(a, b)
 
 ct = 0
-print("---------------------")
+
 for k, v in count_sorted.items():
     if(ct != param_num):
         print(k.ljust(10), str(v).rjust(10))
