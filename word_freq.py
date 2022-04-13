@@ -19,8 +19,8 @@ for i in temp: #각 줄의 index[0]부터 끝까지 돌리기 위해 for문 선�
         word_count[j] += 1
 
 count_sorted = OrderedDict(sorted(word_count.items(), key = lambda t : t[1], reverse = True))
-#for a, b in count_sorted.items():
- #   print(a, b)
+for a, b in count_sorted.items():
+    print(a, b)
 
 ct = 0
 print("---------------------")
